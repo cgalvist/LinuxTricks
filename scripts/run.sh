@@ -23,7 +23,7 @@ else
 		BUILD=true
 		;;
 
-	-simulator) echo "NOTA: se ejecutará el programa en el emulador"
+	-emulator) echo "NOTA: se ejecutará el programa en el emulador"
 		EMULATOR=true
 		;;
 
