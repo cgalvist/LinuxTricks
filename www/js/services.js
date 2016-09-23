@@ -1,47 +1,47 @@
 angular.module('starter.services', [])
 
-.factory('Chats', function() {
+.factory('Diccionarios', function() {
   // Might use a resource here that returns a JSON array
 
-  // Some fake testing data
-  var chats = [{
+  //datos de los diccionarios
+  var diccionarios = [{
     id: 0,
-    name: 'Ben Sparrow',
-    lastText: 'You on your way?',
-    face: 'img/ben.png'
+    nombre: 'Linux (general)',
+    descripcion: 'Comandos básicos',
+    logo: 'img/ionic.png'
   }, {
     id: 1,
-    name: 'Max Lynx',
-    lastText: 'Hey, it\'s me',
-    face: 'img/max.png'
+    nombre: 'Ubuntu',
+    descripcion: 'Sistema operativo',
+    logo: 'img/ionic.png'
   }, {
     id: 2,
-    name: 'Adam Bradleyson',
-    lastText: 'I should buy a boat',
-    face: 'img/adam.jpg'
+    nombre: 'Bash',
+    descripcion: 'Scripts',
+    logo: 'img/ionic.png'
   }, {
     id: 3,
-    name: 'Perry Governor',
-    lastText: 'Look at my mukluks!',
-    face: 'img/perry.png'
+    nombre: 'Emacs',
+    descripcion: 'Editor de texto avanzado',
+    logo: 'img/ionic.png'
   }, {
     id: 4,
-    name: 'Mike Harrington',
-    lastText: 'This is wicked good ice cream.',
-    face: 'img/mike.png'
+    nombre: 'VI',
+    descripcion: 'Editor de texto avanzado',
+    logo: 'img/ionic.png'
   }];
 
   return {
-    all: function() {
-      return chats;
+    diccionarios: function() {
+      return diccionarios;
     },
-    remove: function(chat) {
-      chats.splice(chats.indexOf(chat), 1);
+    remove: function(item) {
+      diccionarios.splice(diccionarios.indexOf(item), 1);
     },
-    get: function(chatId) {
-      for (var i = 0; i < chats.length; i++) {
-        if (chats[i].id === parseInt(chatId)) {
-          return chats[i];
+    get: function(itemId) {
+      for (var i = 0; i < diccionarios.length; i++) {
+        if (diccionarios[i].id === parseInt(itemId)) {
+          return diccionarios[i];
         }
       }
       return null;

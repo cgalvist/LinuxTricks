@@ -1,5 +1,0 @@
-Instrucciones (solo para linux):
-
-para ejecutar los scripts, asegúrese de que tienen permisos de ejecución en su SO.
-
-carpeta de ubicación de SDK Android: /opt/android-sdk-linux/
