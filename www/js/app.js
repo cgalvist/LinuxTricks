@@ -78,6 +78,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
+    .state('app.programa', {
+      url: '/atajos/:itemId',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/programa.html',
+          controller: 'ItemDetailCtrl2'
+        }
+      }
+    })
+
     .state('app.simulador', {
       url: '/simulador',
       views: {
@@ -96,7 +106,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         controller: 'ConfigCtrl'
       }
     }
-  });
+  })
+
+.state('app.about', {
+  url: '/about',
+  views: {
+    'menuContent': {
+      templateUrl: 'templates/about.html'
+    }
+  }
+});
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/home');

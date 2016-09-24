@@ -1,15 +1,15 @@
 <ion-view view-title="Diccionarios">
   <ion-content>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="item in diccionarios" type="item-text-wrap" href="#/tab/diccionarios/{{item.id}}">
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="item in diccionarios" type="item-text-wrap" href="#/app/diccionarios/{{item.id}}">
         <img ng-src="{{item.logo}}"/>
         <h2>{{item.nombre}}</h2>
         <p>{{item.descripcion}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
 
-        <ion-option-button class="button-assertive" ng-click="remove(item)">
+        <!--<ion-option-button class="button-assertive" ng-click="remove(item)">
           Delete
-        </ion-option-button>
+      </ion-option-button>-->
       </ion-item>
     </ion-list>
   </ion-content>
