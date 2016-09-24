@@ -33,7 +33,6 @@
         me.$get = ['$q', function ($q) {
 
             var loadNotificationSound = function ($q, path) {
-            	console.log(path);
                 var deferred = $q.defer();
                 var request = new XMLHttpRequest();
                 request.open('GET', path, true);
@@ -277,7 +276,7 @@
         controller: 'terminalController',
         transclude: true,
         replace:true,
-        template: "<section class='terminal' ng-paste='handlePaste($event)'><div class='terminal-viewport'><div class='terminal-results'></div><span class='terminal-prompt' ng-show='showPrompt'>{{prompt.text}}</span><span class='terminal-input'>{{commandLine}}</span><span class='terminal-cursor'>_</span><input type='text' ng-model='commandLine' class='terminal-target'/></div><div ng-transclude></div></section>",
+        template: "<section class='terminal' ng-paste='handlePaste($event)'><div class='terminal-viewport'><div class='terminal-results'></div><span class='terminal-prompt' ng-show='showPrompt'>{{prompt.text}}</span><span class='terminal-input'>{{commandLine}}</span><span class='terminal-cursor'>_</span><input type='text' ng-model='commandLine' class='terminal-target' style='width: 100%;height: 50px;'/></div><div ng-transclude></div></section>",
         compile: function compile(tElement, tAttrs, transclude) {
             return {
                 pre: function preLink(scope, element, attrs, controller) {
@@ -305,16 +304,8 @@
                         var config = attrs['terminalConfig'];
                         scope.init(config || 'default');
                                                             
-                        /*setInterval(function () {
-                        	var focused = $document[0].activeElement == target[0];
-                            if (focused) {
-                                cursor.toggleClass('terminal-cursor-hidden');
-                            }
-                            else if (!target.hasClass('terminal-cursor-hidden'))
-                                cursor.addClass('terminal-cursor-hidden');
-                        }, 500);*/
                         setInterval(function () {
-                        	var focused = target.hasClass('terminal-target');
+                        	var focused = $document[0].activeElement == target[0];
                             if (focused) {
                                 cursor.toggleClass('terminal-cursor-hidden');
                             }
@@ -335,7 +326,7 @@
                             terminal.toggleClass('terminal-focused', true);
                         });
 
-                        target.on("blur", function (e) {
+                       target.on("blur", function (e) {
                             if(!mouseover)
                                 terminal.toggleClass('terminal-focused', false);
                         });
