@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['ngMaterial'])
+angular.module('starter.controllers', [])
 
 .controller('MenuCtrl', function($scope) {})
 
