@@ -23,7 +23,7 @@ angular.module('starter.controllers', [])
   $scope.item = Diccionarios.get($stateParams.itemId);
 })
 
-.controller('AtajosCtrl', function($scope, Programas) {
+.controller('AtajosCtrl', function($scope, Programas){
     $scope.programas = Programas.programas();
 })
 
@@ -31,7 +31,8 @@ angular.module('starter.controllers', [])
   $scope.item = Programas.get($stateParams.itemId);
 })
 
-.controller('SimuladorCtrl', function($scope) {})
+.controller('SimuladorCtrl', function($scope) {
+})
 
 .controller('ConfigCtrl', function($scope) {
   $scope.settings = {

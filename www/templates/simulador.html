@@ -1,5 +1,11 @@
-<ion-view view-title="Simulador">
+<ion-view view-title="Emulador">
   <ion-content>
-      <h1>Simulador</h1>
+      <div id="contenedorConsola">
+          <div ng-controller="console" ng-show="theme == 'modern'" style="display: block !important;">
+              <terminal>
+                  <p class="click-me">Toque la consola para empezar a escribir</p>
+               </terminal>
+          </div>
+      </div>
   </ion-content>
 </ion-view>
