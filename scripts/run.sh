@@ -4,7 +4,7 @@
 # este script permite compilar y/o correr la aplicación en el emulador
 # o en un dispositivo físico
 
-SERVER=true
+SERVER=false
 EMULATOR=false
 DEVICE=false
 BUILD=false
