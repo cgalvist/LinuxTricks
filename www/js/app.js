@@ -31,55 +31,74 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   // Each state's controller can be found in controllers.js
   $stateProvider
 
-  // setup an abstract state for the tabs directive
-    .state('tab', {
-    url: '/tab',
+    .state('app', {
+    url: '/app',
     abstract: true,
-    templateUrl: 'templates/tabs.html'
+    templateUrl: 'templates/menu.html',
+        controller: 'MenuCtrl'
   })
 
-  // Each tab has its own nav history stack:
-
-  .state('tab.dash', {
-    url: '/dash',
+  .state('app.home', {
+    url: '/home',
     views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
+      'menuContent': {
+        templateUrl: 'templates/home.html',
+        controller: 'HomeCtrl'
       }
     }
   })
 
-  .state('tab.diccionarios', {
+  .state('app.diccionarios', {
       url: '/diccionarios',
       views: {
-        'tab-diccionarios': {
-          templateUrl: 'templates/tab-diccionarios.html',
+        'menuContent': {
+          templateUrl: 'templates/diccionarios.html',
           controller: 'DiccionariosCtrl'
         }
       }
     })
-    .state('tab.diccionario', {
+
+    .state('app.diccionario', {
       url: '/diccionarios/:itemId',
       views: {
-        'tab-diccionarios': {
+        'menuContent': {
           templateUrl: 'templates/diccionario.html',
           controller: 'ItemDetailCtrl'
         }
       }
     })
 
-  .state('tab.account', {
-    url: '/account',
+    .state('app.atajos', {
+      url: '/atajos',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/atajos.html',
+          controller: 'AtajosCtrl'
+        }
+      }
+    })
+
+    .state('app.simulador', {
+      url: '/simulador',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/simulador.html',
+          controller: 'SimuladorCtrl'
+        }
+      }
+    })
+
+  .state('app.config', {
+    url: '/config',
     views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+      'menuContent': {
+        templateUrl: 'templates/config.html',
+        controller: 'ConfigCtrl'
       }
     }
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/app/home');
 
 });

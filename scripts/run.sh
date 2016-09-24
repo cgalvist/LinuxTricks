@@ -4,6 +4,7 @@
 # este script permite compilar y/o correr la aplicación en el emulador
 # o en un dispositivo físico
 
+SERVER=true
 EMULATOR=false
 DEVICE=false
 BUILD=false
@@ -19,6 +20,10 @@ then
 else
 	case "$1" in
 
+	-server) echo "NOTA: se ejecutará el programa en un servidor"
+		SERVER=true
+		;;
+		
 	-build) echo "NOTA: solo se compilará el proyecto"
 		BUILD=true
 		;;
@@ -47,6 +52,14 @@ export PATH=${PATH}:/opt/android-sdk-linux/tools/
 cd ..
 
 echo
+
+if $SERVER
+	then
+		echo "...ejecutando proyecto..."
+		echo
+		pwd
+		ionic serve
+fi
 
 if $BUILD
 	then

@@ -8,6 +8,7 @@
 
 Los parámetros para este script son los siguientes:
 
+* -server: ejecutará el programa en un servidor
 * -build: solo compila el proyecto
 * -emulator: compila el proyecto y lo ejecuta en el emulador de android
 * -device: compila en el proyecto y lo ejecuta en un dispositivo android configurado y conectado por usb. En caso de que no esté conectado, lo ejecuta en el emulador.

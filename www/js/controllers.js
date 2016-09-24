@@ -1,6 +1,8 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
+.controller('MenuCtrl', function($scope) {})
+
+.controller('HomeCtrl', function($scope) {})
 
 .controller('DiccionariosCtrl', function($scope, Diccionarios) {
   // With the new view caching in Ionic, Controllers are only called
@@ -21,7 +23,11 @@ angular.module('starter.controllers', [])
   $scope.item = Diccionarios.get($stateParams.itemId);
 })
 
-.controller('AccountCtrl', function($scope) {
+.controller('AtajosCtrl', function($scope) {})
+
+.controller('SimuladorCtrl', function($scope) {})
+
+.controller('ConfigCtrl', function($scope) {
   $scope.settings = {
     enableFriends: true
   };
