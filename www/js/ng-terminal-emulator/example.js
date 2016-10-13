@@ -6,10 +6,9 @@
     setTimeout(function () {
         $scope.$broadcast('terminal-output', {
             output: true,
-            text: ['Welcome to vtortola.GitHub.io',
-                   'This is an example of ng-terminal-emulator.',
+            text: ['Emulador de consola',
                    '',
-                   "Please type 'help' to open a list of commands"],
+                   "Escriba 'help' para ver la lista de comandos disponibles"],
             breakLine: true
         });
         $scope.$apply();

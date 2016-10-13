@@ -46,7 +46,7 @@
 				var arg = arguments[i];
 
 				if (i != 0 && me.isAbsolute(arg))
-					throw new Error("When combining a path, only the first element can an absolute path.")
+					throw new Error("Cuando se combina una ruta, sólo el primer elemento puede ser una ruta absoluta.")
 				else if (i == 0)
 					arg = me.addRootDirectorySeparator(arg);
 				if(i != arguments.length -1)
@@ -151,12 +151,12 @@
 				_currentPath = pathTools.directoryUp(_currentPath);
 			}
 			else if (path && !pathTools.isDirNameValid(path))
-			    throw new Error("The directory name is not valid");
+			    throw new Error("El nombre del directorio no es válido");
 			else if (path) {
 
 				var dirkey = pathTools.combine(_currentPath, path, "_dir");
 				if (!storage.getItem(dirkey))
-					throw new Error("The directory '" + path + "' does not exist.");
+					throw new Error("El directorio  '" + path + "' no existe.");
 
 				_currentPath = pathTools.combine(_currentPath, path);
 			}
@@ -189,24 +189,24 @@
 		me.existsDir = function (path, failIfNotExist) {
 
 		    if (!pathTools.isDirNameValid(path))
-		        throw new Error("The directory name is not valid");
+		        throw new Error("El nombre del directorio no es válido");
 
 			var dirkey = pathTools.combine(_currentPath, path, "_dir");
 			var exists = storage.getItem(dirkey);
 			if (!exists && failIfNotExist)
-				throw new Error("The directory does not exist.");
+				throw new Error("El directorio no existe.");
 			return exists;
 		};
 
 		me.createDir = function (path) {
 
 		    if (!pathTools.isDirNameValid(path))
-		        throw new Error("The directory name is not valid");
+		        throw new Error("El nombre del directorio no es válido");
 
 			if (!pathTools.isDirNameValid(pathTools.getPathItemName(path)))
-				throw new Error("Invalid directory name");
+				throw new Error("Nombre del directorio inválido");
 			if (me.existsDir(path))
-				throw new Error("The directory already exists.");
+				throw new Error("El directorio ya existe.");
 			else {
 				var dirkey = pathTools.combine(_currentPath, path, "_dir");
 				storage.setItem(dirkey,"_dir");
@@ -216,7 +216,7 @@
 		me.removeDir = function (path) {
 		    console.log("Remove dir: " + path + " on: " + _currentPath);
 		    if (!pathTools.isDirNameValid(path))
-		        throw new Error("The directory name is not valid");
+		        throw new Error("El nombre del directorio no es válido");
 
 		    if (me.existsDir(path, true)) {
 		        var dirkey = pathTools.combine(_currentPath, path, "_dir");
@@ -244,9 +244,9 @@
 
 		me.writeFile = function (name, content) {
 			if (!pathTools.isFileNameValid(name))
-				throw new Error("Invalid file name");
+				throw new Error("Nombre de archivo inválido");
 			if (!content)
-				throw new Error("No content has been passed");
+				throw new Error("Ningún contenido ha sido aprobado");
 
 			var filekey = pathTools.combine(_currentPath, name);
 			storage.setItem(filekey, content);
@@ -254,9 +254,9 @@
 
 		me.appendToFile = function (name, content) {
 			if (!pathTools.isFileNameValid(name))
-				throw new Error("Invalid file name");
+				throw new Error("Nombre de archivo inválido");
 			if (!content)
-				throw new Error("No content has been passed");
+				throw new Error("Ningún contenido ha sido aprobado");
 
 			var filekey = pathTools.combine(_currentPath, name);
 			var prevcontent = storage.getItem(filekey);
@@ -265,22 +265,22 @@
 
 		me.deleteFile = function (name) {
 			if (!pathTools.isFileNameValid(name))
-				throw new Error("Invalid file name");
+				throw new Error("Nombre de archivo inválido");
 			var filekey = pathTools.combine(_currentPath, name);
 			if (!storage.getItem(filekey)) {
-				throw new Error("The file does not exist");
+				throw new Error("El archivo no existe");
 			}
 			storage.removeItem(filekey);
 		};
 
 		me.readFile = function (name) {
 			if (!pathTools.isFileNameValid(name))
-				throw new Error("Invalid file name");
+				throw new Error("Nombre de archivo inválido");
 
 			var filekey = pathTools.combine(_currentPath, name);
 			var content = storage.getItem(filekey);
 			if (!content) {
-				throw new Error("The file does not exist");
+				throw new Error("El archivo no existe");
 			}
 			return content;
 		};
@@ -296,7 +296,7 @@
         var me = {};
         var fs = null;
         me.command= 'pwd';
-        me.description= ['Shows current directory.'];
+        me.description= ['Muestra el directorio actual.'];
         me.init = ['fileSystem', function (fileSystem) {
             fs = fileSystem;
         }];
@@ -311,13 +311,13 @@
         var me = {};
         var fs = null;
         me.command = 'cd';
-        me.description = ['Changes directory.', "Syntax: cd <path>", "Example: cd myDirectory", "Example: cd .."];
+        me.description = ['Cambia el directorio actual.', "Sintaxis: cd <path>", "Ejemplo: cd myDirectory", "Ejemplo: cd .."];
         me.init = ['fileSystem', function (fileSystem) {
             fs = fileSystem;
         }];
         me.handle = function (session, path) {
             if (!path)
-                throw new Error("A directory name is required");
+                throw new Error("Un nombre de directorio es requerido");
             session.commands.push({ command: 'change-prompt', prompt: { path: fs.path(path) } });
         }
         return me;
@@ -328,15 +328,15 @@
         var me = {};
         var fs = null;
         me.command = 'mkdir';
-        me.description = ['Creates directory.',"Syntax: mkdir <directoryName>", "Example: mkdir myDirectory"];
+        me.description = ['Crea un directorio.',"Sintaxis: mkdir <directoryName>", "Ejemplo: mkdir miDirectorio"];
         me.init = ['fileSystem', function (fileSystem) {
             fs = fileSystem;
         }];
         me.handle = function (session, path) {
             if (!path)
-                throw new Error("A directory name is required");
+                throw new Error("Un nombre de directorio es requerido");
             fs.createDir(path);
-            session.output.push({ output: true, text: ["Directory created."], breakLine: true });
+            session.output.push({ output: true, text: ["Directorio creado."], breakLine: true });
         }
         return me;
     };
@@ -346,15 +346,15 @@
         var me = {};
         var fs = null;
         me.command = 'rmdir';
-        me.description = ['Removes directory.', "Syntax: rmdir <directoryName>", "Example: rmdir myDirectory"];
+        me.description = ['Elimina un directorio.', "Sintaxis: rmdir <directoryName>", "Ejemplo: rmdir miDirectorio"];
         me.init = ['fileSystem', function (fileSystem) {
             fs = fileSystem;
         }];
         me.handle = function (session, path) {
             if (!path)
-                throw new Error("A directory name is required");
+                throw new Error("Un nombre de directorio es requerido");
             fs.removeDir(path);
-            session.output.push({ output: true, text: ["Directory removed."], breakLine: true });
+            session.output.push({ output: true, text: ["Directorio eliminado."], breakLine: true });
         }
         return me;
     };
@@ -364,14 +364,14 @@
         var me = {};
         var fs = null;
         me.command = 'ls';
-        me.description = ['List directory contents'];
+        me.description = ['Muestra lista de directorios y archivos'];
         me.init = ['fileSystem', function (fileSystem) {
             fs = fileSystem;
         }];
         me.handle = function (session) {
             var l = fs.list();
             var output = [];
-            
+
             for (var i = 0; i < l.directories.length; i++) {
                 output.push("[DIR]\t\t" + l.directories[i]);
             }
@@ -391,13 +391,13 @@
         var me = {};
         var fs = null;
         me.command = 'cat';
-        me.description = ['Reads file.', "Syntax: cat <fileName>", "Example: cat file.txt"];
+        me.description = ['Lee un archivo.', "Sintaxis: cat <fileName>", "Ejemplo: cat archivo.txt"];
         me.init = ['fileSystem', function (fileSystem) {
             fs = fileSystem;
         }];
         me.handle = function (session, path) {
             if (!path)
-                throw new Error("A file name is required");
+                throw new Error("Un nombre de archivo es requerido");
             var content = fs.readFile(path);
             var outtext = content ? content.split('\n') : [];
             session.output.push({ output: true, text: outtext, breakLine: true });
@@ -410,15 +410,15 @@
         var me = {};
         var fs = null;
         me.command = 'rm';
-        me.description = ['Removes file.', "Syntax: rm <fileName>", "Example: rm file.txt"];
+        me.description = ['Elimina un archivo.', "Sintaxis: rm <fileName>", "Ejemplo: rm archivo.txt"];
         me.init = ['fileSystem', function (fileSystem) {
             fs = fileSystem;
         }];
         me.handle = function (session, path) {
             if (!path)
-                throw new Error("A file name is required");
+                throw new Error("Un nombre de archivo es requerido");
            fs.deleteFile(path)
-           session.output.push({ output: true, text: ["File deleted."], breakLine: true });
+           session.output.push({ output: true, text: ["Archivo eliminado."], breakLine: true });
         }
         return me;
     };
@@ -433,7 +433,7 @@
         }];
         me.handle = function (session, path) {
             if (!path)
-                throw new Error("A file name is required");
+                throw new Error("Un nombre de archivo es requerido");
 
             if (session.input) {
                 var content = '';
@@ -460,7 +460,7 @@
         }];
         me.handle = function (session, path) {
             if (!path)
-                throw new Error("A file name is required");
+                throw new Error("Un nombre de archivo es requerido");
 
             if (session.input) {
                 var content = '';
