@@ -1,0 +1,12 @@
+<ion-view view-title="Programas">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="item in programas" type="item-text-wrap" href="#/app/programas/{{item.id}}">
+        <img ng-src="{{item.logo}}"/>
+        <h2>{{item.nombre}}</h2>
+        <p>{{item.descripcion}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

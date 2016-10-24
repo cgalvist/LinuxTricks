@@ -23,7 +23,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('DiccionarioCtrl', function($scope, $stateParams, Diccionario) {
-  $scope.item = Diccionario.get($stateParams.diccionarioId);
+  //$scope.item = Diccionario.get($stateParams.diccionarioId);
   Diccionario.get($stateParams.diccionarioId).then(function(data) {
       $scope.diccionario = data;
     })
@@ -42,7 +42,7 @@ angular.module('starter.controllers', [])
   });
 })
 
-.controller('AtajosCtrl', function($scope, Programas) {
+.controller('ProgramasCtrl', function($scope, Programas) {
     Programas.getAll().then(function(data) {
         $scope.programas = data;
       })
@@ -51,8 +51,23 @@ angular.module('starter.controllers', [])
     });
 })
 
-.controller('ItemDetailCtrl2', function($scope, $stateParams, Programas) {
-  $scope.item = Programas.get($stateParams.itemId);
+.controller('ProgramaCtrl', function($scope, $stateParams, Programa) {
+  //$scope.item = Programa.get($stateParams.programaId);
+  Programa.get($stateParams.programaId).then(function(data) {
+      $scope.programa = data;
+    })
+    .catch(function(err) {
+      console.log(err);
+  });
+})
+
+.controller('AtajoCtrl', function($scope, $stateParams, Atajo) {
+  Atajo.get($stateParams.atajoId).then(function(data) {
+      $scope.atajo = data;
+    })
+    .catch(function(err) {
+      console.log(err);
+  });
 })
 
 .controller('SimuladorCtrl', function($scope) {})

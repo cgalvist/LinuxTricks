@@ -1,8 +1,12 @@
-<ion-view view-title="{{item.nombre}}">
-  <ion-content class="padding">
-    <img ng-src="{{item.logo}}" style="width: 64px; height: 64px"/>
-    <p>
-      {{item.descripcion}}
-    </p>
+<ion-view view-title="{{programa.nombre}}">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-left item-icon-right" ng-repeat="atajo in programa.atajos" type="item-text-wrap" href="#/app/programas/{{programa.id}}/atajo/{{atajo.id}}">
+        <i class="icon ion-star"></i>
+        <h2>{{atajo.descripcion}}</h2>
+        <p>{{atajo.combinacion}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>

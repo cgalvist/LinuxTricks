@@ -1,20 +1,20 @@
 [{
-  "id": 0,
+  "id": 1,
   "nombre": "GIMP",
   "descripcion": "Editor de imágenes",
   "logo": "img/programas/iconos/gimp.svg"
 }, {
-  "id": 1,
+  "id": 2,
   "nombre": "LibreOffice",
   "descripcion": "Suite de ofimática",
   "logo": "img/programas/iconos/libreoffice.svg"
 }, {
-  "id": 2,
+  "id": 3,
   "nombre": "Blender",
   "descripcion": "Modelado y edición de gráficos 3d",
   "logo": "img/programas/iconos/blender.svg"
 }, {
-  "id": 3,
+  "id": 4,
   "nombre": "Audacity",
   "descripcion": "Editor de audio",
   "logo": "img/programas/iconos/audacity.svg"

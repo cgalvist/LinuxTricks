@@ -1,0 +1,25 @@
+{
+  "id": 1,
+  "nombre": "GIMP",
+  "atajos": [{
+    "id": 1,
+    "categoria": "Ayuda",
+    "descripcion": "Ayuda",
+    "combinacion": "F1"
+  }, {
+    "id": 1,
+    "categoria": "Herramientas",
+    "descripcion": "Selección en rectángulo",
+    "combinacion": "R"
+  }, {
+    "id": 1,
+    "categoria": "Herramientas",
+    "descripcion": "Selección en elipse",
+    "combinacion": "F1"
+  }, {
+    "id": 1,
+    "categoria": "Archivo",
+    "descripcion": "Nueva imagen",
+    "combinacion": "Ctrl + N"
+  }]
+}

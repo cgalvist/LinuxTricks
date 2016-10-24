@@ -78,22 +78,32 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       }
     })
 
-    .state('app.atajos', {
-      url: '/atajos',
+    .state('app.programas', {
+      url: '/programas',
       views: {
         'menuContent': {
-          templateUrl: 'templates/atajos.html',
-          controller: 'AtajosCtrl'
+          templateUrl: 'templates/programas.html',
+          controller: 'ProgramasCtrl'
         }
       }
     })
 
     .state('app.programa', {
-      url: '/atajos/:itemId',
+      url: '/programas/:programaId',
       views: {
         'menuContent': {
           templateUrl: 'templates/programa.html',
-          controller: 'ItemDetailCtrl2'
+          controller: 'ProgramaCtrl'
+        }
+      }
+  })
+
+    .state('app.atajo', {
+      url: '/programas/:programaId/atajo/:atajoId',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/atajo.html',
+          controller: 'AtajoCtrl'
         }
       }
     })
