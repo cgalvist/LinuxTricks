@@ -1,9 +1,27 @@
 <ion-view view-title="Configuración">
   <ion-content>
-    <ion-list>
-    <ion-toggle  ng-model="settings.enableFriends">
-        Habilitar algo
-    </ion-toggle>
-    </ion-list>
+    <div class="card">
+        <div class="item item-divider">
+        Emulador
+        </div>
+        <div class="list">
+            <div class="item item-button-right">
+                Color de fondo
+                <button class="button button-positive" color-picker="" color-mode="name" ng-model="emulador.colorFondo" modal-title="color de fondo" color-box="{{emulador.colorFondo}}">
+                {{emulador.colorFondo || &apos;Seleccione un color&apos; }}
+                </button>
+            </div>
+            <div class="item item-button-right">
+                Color de texto
+                <button class="button button-positive" color-picker="" color-mode="name" ng-model="emulador.colorTexto" modal-title="color de texto" color-box="{{emulador.colorTexto}}">
+                {{emulador.colorTexto || &apos;Seleccione un color&apos; }}
+                </button>
+            </div>
+            <div class="item item-input item-stacked-label">
+                <span class="input-label">Tamaño del texto</span>
+                <input type="number" ng-model="emulador.tamanoTexto" min="1" max="50">
+            </div>
+        </div>
+    </div>
   </ion-content>
 </ion-view>
