@@ -1,5 +1,9 @@
 var ipServer = '../data';
 
+if(ionic.Platform.isAndroid()){
+    ipServer = '/android_asset/www/data';
+}
+
 angular.module('starter.services', [])
 
 .factory('Diccionarios', function($http, $q) {
