@@ -7,19 +7,22 @@
         <div class="list">
             <div class="item item-button-right">
                 Color de fondo
-                <button class="button button-positive" color-picker="" color-mode="name" ng-model="emulador.colorFondo" modal-title="color de fondo" color-box="{{emulador.colorFondo}}">
-                {{emulador.colorFondo || &apos;Seleccione un color&apos; }}
+                <button class="button button-positive" color-picker="" hide-reset="true" cancel-button="cancelar" ng-model="config.emulador.colorFondo" modal-title="color de fondo" color-box="{{config.emulador.colorFondo}}">
+                {{config.emulador.colorFondo || &apos;Seleccione un color&apos;}}
                 </button>
             </div>
             <div class="item item-button-right">
                 Color de texto
-                <button class="button button-positive" color-picker="" color-mode="name" ng-model="emulador.colorTexto" modal-title="color de texto" color-box="{{emulador.colorTexto}}">
-                {{emulador.colorTexto || &apos;Seleccione un color&apos; }}
+                <button class="button button-positive" color-picker="" hide-reset="true" cancel-button="cancelar" ng-model="config.emulador.colorTexto" modal-title="color de texto" color-box="{{config.emulador.colorTexto}}">
+                {{config.emulador.colorTexto || &apos;Seleccione un color&apos;}}
                 </button>
             </div>
             <div class="item item-input item-stacked-label">
                 <span class="input-label">Tamaño del texto</span>
-                <input type="number" ng-model="emulador.tamanoTexto" min="1" max="50">
+                <input type="number" ng-model="config.emulador.tamanoTexto" min="10" max="50">
+            </div>
+            <div class="item" style="text-align: center;">
+                <button class="button button-positive" ng-click="guardar()">Guardar</button>
             </div>
         </div>
     </div>

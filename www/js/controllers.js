@@ -5,13 +5,6 @@ angular.module('starter.controllers', [])
 .controller('HomeCtrl', function($scope) {})
 
 .controller('DiccionariosCtrl', function($scope, Diccionarios) {
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
 
   Diccionarios.getAll().then(function(data) {
       $scope.diccionarios = data;
@@ -70,10 +63,68 @@ angular.module('starter.controllers', [])
   });
 })
 
-.controller('SimuladorCtrl', function($scope) {})
+.controller('SimuladorCtrl', function($scope) {
+
+    $scope.config = {
+      emulador:{
+          colorFondo: "#000000",
+          colorTexto: "#ffffff",
+          tamanoTexto: 12
+      }
+    };
+
+    //leer configuraciones del usuario
+    $scope.$watch(function () {
+        return window.localStorage.getItem("colorFondo");
+    }, function (value) {
+        $scope.config.emulador.colorFondo = value;
+    });
+
+    $scope.$watch(function () {
+        return window.localStorage.getItem("colorTexto");
+    }, function (value) {
+        $scope.config.emulador.colorTexto = value;
+    });
+
+    $scope.$watch(function () {
+        return window.localStorage.getItem("tamanoTexto");
+    }, function (value) {
+        $scope.config.emulador.tamanoTexto = value;
+    });
+})
 
 .controller('ConfigCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
+  $scope.config = {
+    emulador:{
+        colorFondo: "#000000",
+        colorTexto: "#ffffff",
+        tamanoTexto: 12,
+    }
   };
+
+  //leer configuraciones del usuario
+  $scope.$watch(function () {
+      return window.localStorage.getItem("colorFondo");
+  }, function (value) {
+      $scope.config.emulador.colorFondo = value;
+  });
+
+  $scope.$watch(function () {
+      return window.localStorage.getItem("colorTexto");
+  }, function (value) {
+      $scope.config.emulador.colorTexto = value;
+  });
+
+  $scope.$watch(function () {
+      return window.localStorage.getItem("tamanoTexto");
+  }, function (value) {
+      $scope.config.emulador.tamanoTexto = parseInt(value);
+  });
+
+  $scope.guardar = function(){
+    window.localStorage.setItem("colorFondo", $scope.config.emulador.colorFondo);
+    window.localStorage.setItem("colorTexto", $scope.config.emulador.colorTexto);
+    window.localStorage.setItem("tamanoTexto", $scope.config.emulador.tamanoTexto);
+    console.log($scope.config.emulador)
+  }
 });

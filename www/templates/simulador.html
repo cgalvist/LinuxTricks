@@ -2,7 +2,7 @@
   <ion-content scroll="false">
       <div id="contenedorConsola" style="height: 100%;">
           <div ng-controller="console" ng-show="theme == 'modern'" style="display: block !important;height: 100%;">
-              <terminal>
+              <terminal style="background-color:{{config.emulador.colorFondo}}; color:{{config.emulador.colorTexto}}; font-size:{{config.emulador.tamanoTexto}}px;">
                </terminal>
           </div>
       </div>
