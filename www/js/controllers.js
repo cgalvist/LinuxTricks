@@ -10,7 +10,7 @@ angular.module('starter.controllers', [])
       $scope.diccionarios = data;
     })
     .catch(function(err) {
-      console.log("error carga");
+      console.log(err);
   });
   //console.log($scope.diccionarios);
 })
@@ -40,7 +40,7 @@ angular.module('starter.controllers', [])
         $scope.programas = data;
       })
       .catch(function(err) {
-        console.log("error carga");
+        console.log(err);
     });
 })
 
@@ -125,6 +125,6 @@ angular.module('starter.controllers', [])
     window.localStorage.setItem("colorFondo", $scope.config.emulador.colorFondo);
     window.localStorage.setItem("colorTexto", $scope.config.emulador.colorTexto);
     window.localStorage.setItem("tamanoTexto", $scope.config.emulador.tamanoTexto);
-    console.log($scope.config.emulador)
+    //console.log($scope.config.emulador)
   }
 });
