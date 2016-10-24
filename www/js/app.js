@@ -38,12 +38,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         controller: 'MenuCtrl'
   })
 
-  .state('app.home', {
-    url: '/home',
+  .state('app.inicio', {
+    url: '/inicio',
     views: {
       'contenidoPagina': {
-        templateUrl: 'templates/home.html',
-        controller: 'HomeCtrl'
+        templateUrl: 'templates/inicio.html',
+        controller: 'InicioCtrl'
       }
     }
   })
@@ -129,15 +129,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   })
 
 .state('app.about', {
-  url: '/about',
+  url: '/acerca',
   views: {
     'contenidoPagina': {
-      templateUrl: 'templates/about.html'
+      templateUrl: 'templates/acerca.html'
     }
   }
 });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/home');
+  $urlRouterProvider.otherwise('/app/inicio');
 
 });
