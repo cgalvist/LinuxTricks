@@ -21,10 +21,10 @@
                 <span class="input-label">Tamaño del texto</span>
                 <input type="number" ng-model="config.emulador.tamanoTexto" min="10" max="50">
             </div>
-            <div class="item" style="text-align: center;">
-                <button class="button button-positive" ng-click="guardar()">Guardar</button>
-            </div>
         </div>
     </div>
   </ion-content>
+  <div class="bar bar-footer bar-positive" style="cursor:pointer;">
+    <div class="title" ng-click="guardar()">Guardar</div>
+  </div>
 </ion-view>
