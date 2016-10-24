@@ -1,7 +1,13 @@
 <ion-view view-title="{{programa.nombre}}">
   <ion-content>
+    <div class="list list-inset">
+        <label class="item item-input">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="text" placeholder="Buscar" ng-model="buscar">
+        </label>
+    </div>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-left item-icon-right" ng-repeat="atajo in programa.atajos" type="item-text-wrap" href="#/app/programas/{{programa.id}}/atajo/{{atajo.id}}">
+      <ion-item class="item-remove-animate item-avatar item-icon-left item-icon-right" ng-repeat="atajo in programa.atajos | filter: buscar" type="item-text-wrap" href="#/app/programas/{{programa.id}}/atajo/{{atajo.id}}">
         <i class="icon ion-star"></i>
         <h2>{{atajo.descripcion}}</h2>
         <p>{{atajo.combinacion}}</p>

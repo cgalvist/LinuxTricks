@@ -1,7 +1,13 @@
 <ion-view view-title="Diccionarios">
   <ion-content>
+    <div class="list list-inset">
+        <label class="item item-input">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="text" placeholder="Buscar" ng-model="buscar">
+        </label>
+    </div>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="diccionario in diccionarios" type="item-text-wrap" href="#/app/diccionarios/{{diccionario.id}}">
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="diccionario in diccionarios | filter: buscar" type="item-text-wrap" href="#/app/diccionarios/{{diccionario.id}}">
         <img ng-src="{{diccionario.logo}}"/>
         <h2>{{diccionario.nombre}}</h2>
         <p>{{diccionario.descripcion}}</p>

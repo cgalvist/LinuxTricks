@@ -41,7 +41,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   .state('app.home', {
     url: '/home',
     views: {
-      'menuContent': {
+      'contenidoPagina': {
         templateUrl: 'templates/home.html',
         controller: 'HomeCtrl'
       }
@@ -51,7 +51,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   .state('app.diccionarios', {
       url: '/diccionarios',
       views: {
-        'menuContent': {
+        'contenidoPagina': {
           templateUrl: 'templates/diccionarios.html',
           controller: 'DiccionariosCtrl'
         }
@@ -61,7 +61,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     .state('app.diccionario', {
       url: '/diccionarios/:diccionarioId',
       views: {
-        'menuContent': {
+        'contenidoPagina': {
           templateUrl: 'templates/diccionario.html',
           controller: 'DiccionarioCtrl'
         }
@@ -71,7 +71,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     .state('app.comando', {
       url: '/diccionarios/:diccionarioId/comando/:comandoId',
       views: {
-        'menuContent': {
+        'contenidoPagina': {
           templateUrl: 'templates/comando.html',
           controller: 'ComandoCtrl'
         }
@@ -81,7 +81,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     .state('app.programas', {
       url: '/programas',
       views: {
-        'menuContent': {
+        'contenidoPagina': {
           templateUrl: 'templates/programas.html',
           controller: 'ProgramasCtrl'
         }
@@ -91,7 +91,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     .state('app.programa', {
       url: '/programas/:programaId',
       views: {
-        'menuContent': {
+        'contenidoPagina': {
           templateUrl: 'templates/programa.html',
           controller: 'ProgramaCtrl'
         }
@@ -101,7 +101,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     .state('app.atajo', {
       url: '/programas/:programaId/atajo/:atajoId',
       views: {
-        'menuContent': {
+        'contenidoPagina': {
           templateUrl: 'templates/atajo.html',
           controller: 'AtajoCtrl'
         }
@@ -111,7 +111,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     .state('app.simulador', {
       url: '/simulador',
       views: {
-        'menuContent': {
+        'contenidoPagina': {
           templateUrl: 'templates/simulador.html',
           controller: 'SimuladorCtrl'
         }
@@ -121,7 +121,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   .state('app.config', {
     url: '/config',
     views: {
-      'menuContent': {
+      'contenidoPagina': {
         templateUrl: 'templates/config.html',
         controller: 'ConfigCtrl'
       }
@@ -131,7 +131,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 .state('app.about', {
   url: '/about',
   views: {
-    'menuContent': {
+    'contenidoPagina': {
       templateUrl: 'templates/about.html'
     }
   }

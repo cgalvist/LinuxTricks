@@ -7,17 +7,17 @@
     "descripcion": "Ayuda",
     "combinacion": "F1"
   }, {
-    "id": 1,
+    "id": 2,
     "categoria": "Herramientas",
     "descripcion": "Selección en rectángulo",
     "combinacion": "R"
   }, {
-    "id": 1,
+    "id": 3,
     "categoria": "Herramientas",
     "descripcion": "Selección en elipse",
     "combinacion": "F1"
   }, {
-    "id": 1,
+    "id": 4,
     "categoria": "Archivo",
     "descripcion": "Nueva imagen",
     "combinacion": "Ctrl + N"

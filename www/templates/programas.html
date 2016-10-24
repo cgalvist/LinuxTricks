@@ -1,7 +1,13 @@
 <ion-view view-title="Programas">
   <ion-content>
+    <div class="list list-inset">
+        <label class="item item-input">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="text" placeholder="Buscar" ng-model="buscar">
+        </label>
+    </div>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="item in programas" type="item-text-wrap" href="#/app/programas/{{item.id}}">
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="item in programas | filter: buscar" type="item-text-wrap" href="#/app/programas/{{item.id}}">
         <img ng-src="{{item.logo}}"/>
         <h2>{{item.nombre}}</h2>
         <p>{{item.descripcion}}</p>
