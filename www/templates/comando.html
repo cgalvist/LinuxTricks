@@ -1,0 +1,20 @@
+<ion-view view-title="{{comando.titulo}}">
+  <ion-content>
+    <h1>{{comando.titulo}}</h1>
+    <p>{{comando.descripcion}}</p>
+    <p>{{comando.sintaxis}}</p>
+    <ul>
+        <li ng-repeat="opcion in comando.opciones">
+            <p>{{opcion.opcion}}</p>
+            <p>{{opcion.descripcion}}</p>
+        </li>
+    </ul>
+    <ul>
+        <li ng-repeat="ejemplo in comando.ejemplos">
+            <p>{{ejemplo.entrada}}</p>
+            <p>{{ejemplo.salida}}</p>
+            <p>{{ejemplo.explicacion}}</p>
+        </li>
+    </ul>
+  </ion-content>
+</ion-view>

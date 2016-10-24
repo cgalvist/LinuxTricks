@@ -59,11 +59,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     })
 
     .state('app.diccionario', {
-      url: '/diccionarios/:itemId',
+      url: '/diccionarios/:diccionarioId',
       views: {
         'menuContent': {
           templateUrl: 'templates/diccionario.html',
-          controller: 'ItemDetailCtrl'
+          controller: 'DiccionarioCtrl'
+        }
+      }
+    })
+
+    .state('app.comando', {
+      url: '/diccionarios/:diccionarioId/comando/:comandoId',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/comando.html',
+          controller: 'ComandoCtrl'
         }
       }
     })

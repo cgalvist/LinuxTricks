@@ -1,0 +1,18 @@
+{
+  "id": 1,
+  "titulo": "alias",
+  "descripcion": "permite crear un atajo a un comando. Como el nombre indica, se puede configurar un alias para los comandos o rutas que sean difíciles de recordar",
+  "sintaxis": "alias [opciones][nombreAlias[=Cadena]]",
+  "opciones": [{
+    "opcion": "-a",
+    "descripcion": "Elimina todas las definiciones de alias del programa de ejecución de shell actual"
+  }, {
+    "opcion": "-p",
+    "descripcion": "imprime la lista de alias en formato 'nombre=valor'"
+  }],
+  "ejemplos": [{
+    "entrada": "alias lhost='cd /var/www/html'",
+    "salida": null,
+    "explicacion": "este comando configura a lhosts como la orden 'cd /var/www/html'"
+  }]
+}

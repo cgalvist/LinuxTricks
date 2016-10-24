@@ -13,26 +13,49 @@ angular.module('starter.controllers', [])
   //$scope.$on('$ionicView.enter', function(e) {
   //});
 
-  $scope.diccionarios = Diccionarios.diccionarios();
-  $scope.remove = function(item) {
-    Diccionarios.remove(item);
-  };
+  Diccionarios.getAll().then(function(data) {
+      $scope.diccionarios = data;
+    })
+    .catch(function(err) {
+      console.log("error carga");
+  });
+  //console.log($scope.diccionarios);
 })
 
-.controller('ItemDetailCtrl', function($scope, $stateParams, Diccionarios) {
-  $scope.item = Diccionarios.get($stateParams.itemId);
+.controller('DiccionarioCtrl', function($scope, $stateParams, Diccionario) {
+  $scope.item = Diccionario.get($stateParams.diccionarioId);
+  Diccionario.get($stateParams.diccionarioId).then(function(data) {
+      $scope.diccionario = data;
+    })
+    .catch(function(err) {
+      console.log(err);
+  });
 })
 
-.controller('AtajosCtrl', function($scope, Programas){
-    $scope.programas = Programas.programas();
+.controller('ComandoCtrl', function($scope, $stateParams, Comando) {
+  $scope.item = Comando.get($stateParams.comandoId);
+  Comando.get($stateParams.comandoId).then(function(data) {
+      $scope.comando = data;
+    })
+    .catch(function(err) {
+      console.log(err);
+  });
+})
+
+.controller('AtajosCtrl', function($scope, Programas) {
+    Programas.getAll().then(function(data) {
+        $scope.programas = data;
+      })
+      .catch(function(err) {
+        console.log("error carga");
+    });
 })
 
 .controller('ItemDetailCtrl2', function($scope, $stateParams, Programas) {
   $scope.item = Programas.get($stateParams.itemId);
 })
 
-.controller('SimuladorCtrl', function($scope) {
-})
+.controller('SimuladorCtrl', function($scope) {})
 
 .controller('ConfigCtrl', function($scope) {
   $scope.settings = {

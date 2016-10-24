@@ -1,0 +1,21 @@
+[{
+  "id": 1,
+  "nombre": "Linux (general)",
+  "descripcion": "Comandos básicos",
+  "logo": "img/diccionarios/iconos/linux.svg"
+}, {
+  "id": 2,
+  "nombre": "Ubuntu",
+  "descripcion": "Sistema operativo",
+  "logo": "img/diccionarios/iconos/ubuntu.svg"
+}, {
+  "id": 3,
+  "nombre": "Bash",
+  "descripcion": "Scripts",
+  "logo": "img/diccionarios/iconos/terminal.svg"
+}, {
+  "id": 4,
+  "nombre": "VI",
+  "descripcion": "Editor de texto avanzado",
+  "logo": "img/diccionarios/iconos/vim.svg"
+}]

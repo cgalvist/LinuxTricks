@@ -1,0 +1,14 @@
+{
+  "id": 1,
+  "nombre": "Linux (general)",
+  "comandos": [{
+    "id": 1,
+    "nombre": "alias"
+  }, {
+    "id": 2,
+    "nombre": "basename"
+  }, {
+    "id": 3,
+    "nombre": "cal"
+  }]
+}
