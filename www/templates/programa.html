@@ -9,8 +9,10 @@
     <ion-list>
       <ion-item class="item-remove-animate item-avatar item-icon-left item-icon-right" ng-repeat="atajo in programa.atajos | filter: buscar" type="item-text-wrap" href="#/app/programas/{{programa.id}}/atajo/{{atajo.id}}">
         <i class="icon ion-star"></i>
-        <h2>{{atajo.descripcion}}</h2>
-        <p>{{atajo.combinacion}}</p>
+        <h2>{{atajo.descripcion}} ({{atajo.combinacion}})</h2>
+        <span class="item-note">
+          {{atajo.categoria}}
+        </span>
         <i class="icon ion-chevron-right icon-accessory"></i>
       </ion-item>
     </ion-list>
