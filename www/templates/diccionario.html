@@ -1,7 +1,8 @@
 <ion-view view-title="{{diccionario.nombre}}">
   <ion-content>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="comando in diccionario.comandos" type="item-text-wrap" href="#/app/diccionarios/{{diccionario.id}}/comando/{{comando.id}}">
+      <ion-item class="item-remove-animate item-avatar item-icon-left item-icon-right" ng-repeat="comando in diccionario.comandos" type="item-text-wrap" href="#/app/diccionarios/{{diccionario.id}}/comando/{{comando.id}}">
+        <i class="icon ion-star"></i>
         <h2>{{comando.nombre}}</h2>
         <p>{{comando.descripcion}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>

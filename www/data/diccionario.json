@@ -3,12 +3,15 @@
   "nombre": "Linux (general)",
   "comandos": [{
     "id": 1,
-    "nombre": "alias"
+    "nombre": "alias",
+    "descripcion": "permite crear un atajo a un comando. Como el nombre indica, se puede configurar un alias para los comandos o rutas que sean difíciles de recordar"
   }, {
     "id": 2,
-    "nombre": "basename"
+    "nombre": "basename",
+    "descripcion": "sirve para remover la extensión de un archivo "
   }, {
     "id": 3,
-    "nombre": "cal"
+    "nombre": "cal",
+    "descripcion": "permite mostrar el calendario"
   }]
 }
