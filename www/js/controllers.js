@@ -93,7 +93,7 @@ angular.module('starter.controllers', [])
     });
 })
 
-.controller('ConfigCtrl', function($scope) {
+.controller('ConfigCtrl', function($scope, ionicToast) {
   $scope.config = {
     emulador:{
         colorFondo: "#000000",
@@ -126,5 +126,6 @@ angular.module('starter.controllers', [])
     window.localStorage.setItem("colorTexto", $scope.config.emulador.colorTexto);
     window.localStorage.setItem("tamanoTexto", $scope.config.emulador.tamanoTexto);
     //console.log($scope.config.emulador)
+    ionicToast.show('Configuración actualizada', 'top', false, 2500);
   }
 });
