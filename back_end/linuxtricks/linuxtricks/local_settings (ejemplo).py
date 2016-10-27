@@ -7,8 +7,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'linuxtricks',
-        'USER': 'LTLector',
-        'PASSWORD': '1234',
+        'USER': 'usuarioLector',
+        'PASSWORD': 'usuarioLector',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
