@@ -7,9 +7,7 @@ from .models import comando
 from .models import opcion
 from .models import ejemplo
 
-# Create your views here.
-
-# Lista inicial de diccionarios
+# lista inicial de diccionarios
 def index(request):
     lista = diccionario.objects.all()
 
@@ -19,7 +17,6 @@ def index(request):
 # lista de comandos por diccionario
 def comandos(request, diccionario_id):
     item = diccionario.objects.get(pk = diccionario_id)
-    print("diccionario id: " + diccionario_id)
     lista = comando.objects.filter(diccionario = diccionario_id)
 
     output = {'id': item.pk, 'nombre': item.nombre, 'comandos': [{'id': item2.pk, 'nombre': item2.nombre, 'descripcion': item2.descripcion} for item2 in lista]}
