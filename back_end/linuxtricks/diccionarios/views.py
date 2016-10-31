@@ -9,6 +9,13 @@ from .models import ejemplo
 
 # lista inicial de diccionarios
 def index(request):
+
+    #indice de diccionario
+    diccionario_id = request.GET.get('diccionario_id', 0)
+    #indice de comando
+    comando_id = request.GET.get('comando_id', 0)
+    print("diccionarioId: " + str(diccionario_id) + ", comandoId: " + str(comando_id))
+
     lista = diccionario.objects.all()
 
     output = [{'id': item.pk, 'nombre': item.nombre, 'descripcion': item.descripcion, 'logo': item.logo} for item in lista]
