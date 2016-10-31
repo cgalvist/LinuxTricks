@@ -8,5 +8,5 @@ urlpatterns = [
     # /programas/$id/
     url(r'^(?P<programa_id>[0-9]+)/$', views.atajos, name='atajos'),
     # /programas/$id/atajo/$id
-    url(r'^(?P<programa_id>[0-9]+)/comando/(?P<atajo_id>[0-9]+)/$', views.atajoPorId, name='atajoPorId'),
+    url(r'^(?P<programa_id>[0-9]+)/atajo/(?P<atajo_id>[0-9]+)/$', views.atajoPorId, name='atajoPorId'),
 ]
