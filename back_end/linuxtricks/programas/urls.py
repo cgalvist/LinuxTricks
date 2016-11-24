@@ -4,9 +4,8 @@ from . import views
 
 urlpatterns = [
     # /programas/
+    # /programas/?id=1
     url(r'^$', views.index, name='index'),
-    # /programas/$id/
-    url(r'^(?P<programa_id>[0-9]+)/$', views.atajos, name='atajos'),
-    # /programas/$id/atajo/$id
-    url(r'^(?P<programa_id>[0-9]+)/atajo/(?P<atajo_id>[0-9]+)/$', views.atajoPorId, name='atajoPorId'),
+    # /programas/atajo/?id=1
+    url(r'^atajo$', views.atajoPorId, name='atajoPorId'),
 ]

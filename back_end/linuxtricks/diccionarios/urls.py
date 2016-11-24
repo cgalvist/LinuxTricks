@@ -4,9 +4,8 @@ from . import views
 
 urlpatterns = [
     # /diccionarios/
+    # /diccionarios/?id=1
     url(r'^$', views.index, name='index'),
-    # /diccionarios/$id/
-    url(r'^(?P<diccionario_id>[0-9]+)/$', views.comandos, name='comandos'),
-    # /diccionarios/$id/comando/$id
-    url(r'^(?P<diccionario_id>[0-9]+)/comando/(?P<comando_id>[0-9]+)/$', views.comandoPorId, name='comandoPorId'),
+    # /diccionarios/comando/?id=1
+    url(r'^comando$', views.comandoPorId, name='comandoPorId'),
 ]
