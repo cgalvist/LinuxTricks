@@ -157,7 +157,10 @@ angular.module('starter.services', [])
 
     $http({
       method: 'GET',
-      url: ipServer + '/programas/atajo/',
+      url: ipServer + '/programas/atajo',
+      params: {
+        id: id,
+      }
     }).success(function(data) {
       deferred.resolve(data);
     }).error(function(error) {
