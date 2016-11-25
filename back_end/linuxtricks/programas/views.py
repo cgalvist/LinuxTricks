@@ -12,7 +12,7 @@ def index(request):
 
     if (id == 0):
         lista = programa.objects.all()
-        output = [{'id': item.pk, 'nombre': item.nombre, 'descripcion': item.descripcion, 'logo': item.logo} for item in lista]
+        output = [{'id': item.pk, 'nombre': item.nombre, 'descripcion': item.descripcion.encode('utf-8'), 'logo': item.logo} for item in lista]
     else:
         item = programa.objects.get(pk = id)
         lista = atajo.objects.filter(programa = id)

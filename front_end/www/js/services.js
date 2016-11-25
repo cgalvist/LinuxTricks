@@ -1,4 +1,5 @@
-var ipServer = '../data';
+//var ipServer = '../data';
+var ipServer = 'http://127.0.0.1:8000';
 
 if(ionic.Platform.isAndroid()){
     ipServer = '/android_asset/www/data';
@@ -13,7 +14,7 @@ angular.module('starter.services', [])
 
     $http({
       method: 'GET',
-      url: ipServer + '/diccionarios.json',
+      url: ipServer + '/diccionarios/',
     }).success(function(data) {
       deferred.resolve(data);
     }).error(function(error) {
@@ -44,7 +45,7 @@ angular.module('starter.services', [])
 
     $http({
       method: 'GET',
-      url: ipServer + '/diccionario.json',
+      url: ipServer + '/diccionarios/',
       params: {
         id: id,
       }
@@ -71,7 +72,7 @@ angular.module('starter.services', [])
 
     $http({
       method: 'GET',
-      url: ipServer + '/comando.json',
+      url: ipServer + '/diccionarios/comando',
       params: {
         id: id,
       }
@@ -98,7 +99,7 @@ angular.module('starter.services', [])
 
     $http({
       method: 'GET',
-      url: ipServer + '/programas.json',
+      url: ipServer + '/programas/',
     }).success(function(data) {
       deferred.resolve(data);
     }).error(function(error) {
@@ -129,7 +130,7 @@ angular.module('starter.services', [])
 
     $http({
       method: 'GET',
-      url: ipServer + '/programa.json',
+      url: ipServer + '/programas/',
       params: {
         id: id,
       }
@@ -156,7 +157,7 @@ angular.module('starter.services', [])
 
     $http({
       method: 'GET',
-      url: ipServer + '/atajo.json',
+      url: ipServer + '/programas/atajo/',
     }).success(function(data) {
       deferred.resolve(data);
     }).error(function(error) {
