@@ -6,7 +6,7 @@ from django.db import models
 
 class programa(models.Model):
     nombre = models.CharField(max_length=50)
-    descripcion = models.CharField(max_length=100)
+    descripcion = models.CharField(max_length=150)
     logo = models.CharField(max_length=50)
 
 class categoria(models.Model):
@@ -16,4 +16,4 @@ class atajo(models.Model):
     programa = models.ForeignKey(programa)
     categoria = models.ForeignKey(categoria)
     descripcion = models.CharField(max_length=50)
-    combinacion = models.CharField(max_length=100)
+    combinacion = models.CharField(max_length=200)
