@@ -8,7 +8,7 @@
     </div>
     <ion-list>
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="diccionario in diccionarios | filter: buscar" type="item-text-wrap" href="#/app/diccionarios/{{diccionario.id}}">
-        <img ng-src="{{diccionario.logo}}"/>
+        <img ng-src="img/diccionarios/iconos/{{diccionario.logo}}"/>
         <h2>{{diccionario.nombre}}</h2>
         <p>{{diccionario.descripcion}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
