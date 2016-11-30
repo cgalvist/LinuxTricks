@@ -1,9 +1,12 @@
 //var ipServer = '../data';
 var ipServer = 'http://127.0.0.1:8000';
+//var ipServer = 'http://52.204.1.104:8000';
 
+/*
 if(ionic.Platform.isAndroid()){
     ipServer = '/android_asset/www/data';
 }
+*/
 
 angular.module('starter.services', [])
 
