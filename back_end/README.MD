@@ -11,14 +11,44 @@ GRANT ALL PRIVILEGES ON linuxtricks. * TO 'usuarioLector'@'localhost';
 FLUSH PRIVILEGES;
 ```
 
-##Django
+##Configuración de Django
 Para la configuración de django, se debe utilizar el archivo "local_settings(ejemplo).py" ubicado en "linuxtricks/linuxtricks". Este archivo ha sido creado a modo de ejemplo, por favor renombrar el archivo a "local_settings.py" y configurar las credenciales de acceso respectivas del entorno.
 
 ##Dependencias de python
-Para instalar las dependencias de Python, ejecute la siguiente orden:
+Para instalar las dependencias de Python, ejecute la siguiente orden estando ubicado en la carpeta "back_end":
 
-```bash
+```shell
 pip install -r requirements.txt
 ```
 
 Si está en un entorno de desarrollo, es MUY recomendable realizar la instalación de las dependencias de Python en un entorno virtual.
+
+NOTA: En Ubuntu en ocasiones puede presentar un problema al instalar el conector de MySQL. Si esto ocurre instale el siguiente paquete:
+
+```shell
+sudo apt-get install libmysqlclient-dev
+```
+
+##Iniciar Django por primera vez
+Al estar ubicado en "back_end/linuxtricks", ejecute la siguiente orden para construir la base de datos:
+
+```shell
+python manage.py migrate
+```
+
+Después de esto puede desplegar Django con la orden:
+
+```shell
+python manage.py runserver 9999
+```
+
+El cual iniciará el back_end en el puerto 9999. Puede cambiar el puerto por el que desee.
+
+NOTA: Si está en un entorno de producción es MUY recomendable desplegar el back_end en un programa creado para ello (Por ejemplo Tomcat).
+
+##Poblar la base de datos
+Luego de realizar todos los pasos anteriores, puede poblar la base de datos con el script de ejemplo "scriptBD.sql" ubicado en la carpeta "archivos" ejecutando la siguiente orden y luego ingresando la contraseña que haya configurado anteriormente:
+
+```shell
+mysql -u usuarioLector -p linuxtricks < scriptBD.sql
+```
