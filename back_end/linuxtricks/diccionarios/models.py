@@ -23,5 +23,5 @@ class opcion(models.Model):
 class ejemplo(models.Model):
     comando = models.ForeignKey(comando, on_delete=models.CASCADE)
     entrada = models.CharField(max_length=50)
-    salida = models.CharField(max_length=50)
+    salida = models.CharField(max_length=50, null=True)
     descripcion = models.CharField(max_length=200)

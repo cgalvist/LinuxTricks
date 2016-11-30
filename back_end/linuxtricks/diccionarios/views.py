@@ -32,6 +32,6 @@ def comandoPorId(request):
         listaOpciones = opcion.objects.filter(comando = id)
         listaEjemplos = ejemplo.objects.filter(comando = id)
 
-        output = {'id': item.pk, 'titulo': item.nombre, 'descripcion': item.descripcion, 'sintaxis': item.sintaxis, 'opciones':[{'opcion': item2.comando, 'descripcion': item2.descripcion} for item2 in listaOpciones], 'ejemplos':[{'entrada': item2.entrada, 'salida': item2.salida, 'explicacion': item2.descripcion} for item2 in listaEjemplos]}
+        output = {'id': item.pk, 'titulo': item.nombre, 'descripcion': item.descripcion, 'sintaxis': item.sintaxis, 'opciones':[{'opcion': item2.nombre, 'descripcion': item2.descripcion} for item2 in listaOpciones], 'ejemplos':[{'entrada': item2.entrada, 'salida': item2.salida, 'explicacion': item2.descripcion} for item2 in listaEjemplos]}
 
     return JsonResponse(output, safe=False)
